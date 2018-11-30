@@ -65,7 +65,7 @@ podTemplate(label: label,
             withEnv(['VERSION=' + env.version.trim(), 'COMMIT=' + env.commit.trim()]) {
               sh """
                 helm upgrade --install dondilanka-first-app \
-                  --namespace production \
+                  --namespace dondilanka \
                   --set image.repository=dilankadon/first-app \
                   --set image.tag=${VERSION}.${COMMIT} \
                   --set ingress.enabled=true \
